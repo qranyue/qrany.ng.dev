@@ -1,16 +1,22 @@
 <h1 nz-title>Qrany NG</h1>
 <p nz-typography>中台项目</p>
 
-<form nz-form class="login-form" [formGroup]="form">
+<form nz-form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <nz-form-item>
-    <nz-form-control>
-      <input nz-input type="text" formControlName="account" placeholder="请输入账号" />
+    <nz-form-control nzErrorTip="请输入账号">
+      <nz-input-group nzPrefixIcon="user" nzSize="large">
+        <input nz-input type="text" formControlName="username" autocomplete="username" placeholder="请输入账号" />
+      </nz-input-group>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item>
     <nz-form-control>
-      <input nz-input type="password" formControlName="password" placeholder="请输入密码" />
+      <nz-input-group nzPrefixIcon="lock" nzSize="large">
+        <input nz-input type="password" formControlName="password" autocomplete="current-password" placeholder="请输入密码" />
+      </nz-input-group>
     </nz-form-control>
   </nz-form-item>
+
+  <button nz-button nzType="primary" nzSize="large" nzBlock [nzLoading]="loading" type="submit">登录</button>
 </form>
