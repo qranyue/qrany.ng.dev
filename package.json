@@ -1,0 +1,11 @@
+{
+  "name": "qrany.ng",
+  "version": "1.0.0",
+  "description": "NG",
+  "author": "qranyue",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "admin"
+  ]
+}
